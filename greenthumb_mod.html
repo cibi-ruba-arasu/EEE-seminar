@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<style>
+    .tit{
+        color: white;
+        background-color: black;
+        font-size: 70px;
+        text-align: center;
+        margin-top: 0;
+        padding: 10px;
+    }
+    .mainic{
+        height: 450px;
+        width: 250px;
+        border-style: solid;
+        border-color: black;
+        padding: 10px;
+        display: inline-block;
+        margin-right: 40px;
+    }
+    .icimg{
+        width: 230px;
+        height: 150px;
+        margin-left: 10px;
+        border-style: solid;
+        border-color: black;
+    }
+    .tpcic{
+        text-align: center;
+        font-weight: bold;
+    }
+    .dp{
+        margin-top: 20px;
+        width: 40px;
+        transition-duration: 0.6s;
+    }
+    .dp:hover{
+        transform: scale(500%);
+    }
+    .usrnm{
+        display: inline-block;
+    }
+    .apr{
+        color: white;
+        background-color: green;
+        height: 30px;
+        border-radius: 10px;
+        border-style: none;
+        margin-left: 40px;
+        transition-duration: 0.6s;
+    }
+    .apr:hover{
+        background-color: rgba(2, 255, 36, 0.3);
+        transform: scale(110%);
+        cursor: pointer;
+    }
+    .tpdesc{
+        height: 108px;
+        width: 250px;
+    }
+    .rej{
+        color: white;
+        background-color: red;
+        height: 30px;
+        border-radius: 10px;
+        border-style: none;
+        margin-left: 40px;
+        transition-duration: 0.6s
+    }
+    .rej:hover{
+        background-color: rgba(255, 0, 0, 0.3);
+        transform: scale(110%);
+        cursor: pointer;
+    }
+</style>
+<html>
+    <head>
+        <title>Greenthumb.org(moderator)</title>
+    </head>
+    <p class="tit">Moderator Approval Page</p>
+    <p>---Recent Submissions---</p>
+    <div class="mainest">
+        <div class="mainic">
+            <img src="pesticide AI.png" class="icimg">
+            <img src="ryan.png" class="dp"> 
+            <p class="usrnm">- Ryan</p>
+            <p class="tpcic">AI pesticide</p>
+            <p class="tpdesc">Lorem ipsum dolor, sit amet consectetur adipisici
+                ng elit. Iure quas laudantium
+                repellat dolorem, excepturi autem. Qui labor
+                iosam autem odit excepturi fugiat fuga cum ab vel, expedita ex provident in facere?</p>
+                <button class="apr">Approve</button>
+                <button class="rej">Reject</button>
+        </div>
+        <div class="mainic">
+            <img src="joesproject.jpg" class="icimg">
+            <img src="joe.png" class="dp"> 
+            <p class="usrnm">- Joe</p>
+            <p class="tpcic">Powerful AI tool</p>
+            <p class="tpdesc">Most powerful AI tool in the world</p>
+            <button class="apr">Approve</button>
+            <button class="rej">Reject</button>
+        </div>
+    </div>
+</html>
+<script>
+    let md=document.querySelector('.mainest')
+    if(localStorage.length>=1)
+    {
+        md.innerHTML=`<div class="mainest">
+        <div class="mainic">
+            <img src="AI tractor.jpg" class="icimg">
+            <img src="bob1.png" class="dp"> 
+            <p class="usrnm">- Bob</p>
+            <p class="tpcic">AI tractor</p>
+            <p class="tpdesc">AI powered tractor</p>
+            <button class="apr" onclick="alert('Approved')">Approve</button>
+            <button class="rej" onclick="alert('Rejected')">Reject</button>
+        </div>
+        <div class="mainic">
+            <img src="pesticide AI.png" class="icimg">
+            <img src="ryan.png" class="dp"> 
+            <p class="usrnm">- Ryan</p>
+            <p class="tpcic">AI pesticide</p>
+            <p class="tpdesc">Lorem ipsum dolor, sit amet consectetur adipisici
+                ng elit. Iure quas laudantium
+                repellat dolorem, excepturi autem. Qui labor
+                iosam autem odit excepturi fugiat fuga cum ab vel, expedita ex provident in facere?</p>
+                <button class="apr" onclick="alert('Approved')">Approve</button>
+                <button class="rej" onclick="alert('Rejected')">Reject</button>
+        </div>
+        <div class="mainic">
+            <img src="joesproject.jpg" class="icimg">
+            <img src="joe.png" class="dp"> 
+            <p class="usrnm">- Joe</p>
+            <p class="tpcic">Powerful AI tool</p>
+            <p class="tpdesc">Most powerful AI tool in the world</p>
+            <button class="apr" onclick="alert('Approved')">Approve</button>
+            <button class="rej" onclick="alert('Rejected')">Reject</button>
+        </div>
+    </div>`
+    }
+</script>

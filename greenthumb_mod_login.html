@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<style>
+    .tit{
+        background-color: black;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        margin-top: 0;
+        padding: 10px;
+    }
+    .popup{
+        height: 300px;
+        width: 500px;
+        border-style: solid;
+        border-color: black;
+        margin-left: 400px;
+        padding: 20px;
+    }
+    .lp{
+        font-weight: bolder;
+        text-align: center;
+        text-decoration: underline;
+        font-size: 30px;
+    }
+    .emailp,.pswd{
+        margin-left: 160px;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .popupmsg{
+        visibility: hidden;
+    }
+    .btn{
+        border-style: none;
+        height: 30px;
+        color: white;
+        background-color: black;
+        border-radius: 10px;
+        transition-duration: 0.6s;
+        width: 80px;
+        margin-left: 210px;
+    }
+    .btn:hover{
+        background-color: white;
+        color: black;
+        border-style: solid;
+        border-color: black;
+        cursor: pointer;
+    }
+    .txtvis{
+        visibility: visible;
+        text-align: center;
+        color: red;
+        font-size: 15px;
+    }
+</style>
+<html>
+    <head>
+        <title>Greenthumb.org(Moderator-login)</title>
+    </head>
+    <body>
+        <p class="tit">Moderator Login page</p>
+        <div class="popup">
+            <p class="lp">Login</p>
+            <p style="text-align: center;">Username</p>
+            <input type="text" class="emailp" placeholder="username">
+            <p style="text-align: center;">Password</p>
+            <input type="password" class="pswd" placeholder="password"> 
+            <button class="btn" onclick="main();">Login</button>
+            <p class="popupmsg">invalid username or password</p>
+        </div>
+    </body>
+</html>
+<script>
+    let ev=document.querySelector('.emailp')
+    let pv=document.querySelector('.pswd')
+    let pm=document.querySelector('.popupmsg')
+
+    function main()
+    {
+        if(ev.value=="moderator_example" && pv.value=="mod123")
+        {
+            window.location.href= 'greenthumb_mod.html'
+        }
+        else{
+            pm.classList.add('txtvis')
+        }
+    }
+</script>

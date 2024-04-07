@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<style>
+    .tit{
+        background-color: darkgreen;
+        color: white;
+        font-size: 70px;
+        padding: 10px;
+        margin-top: 0;
+        text-align: center;
+    }
+    .btn{
+        color: white;
+        background-color: black;
+        border-style: none;
+        display: block;
+        height: 30px;
+        width: 150px;
+        margin-bottom: 40px;
+        border-radius: 10px;
+        margin-left: 125px;
+        transition-duration: 0.7s;
+    }
+    .btn:hover{
+        color: black;
+        background-color: white;
+        border-style: solid;
+        border-color: black;
+        cursor: pointer;
+        transform:scale(130%) ;
+    }
+    .main{
+        height: 400px;
+        width: 400px;
+        border-style: solid;
+        border-color: black;
+        margin-left: 490px;
+    }
+    .tits{
+        text-align: center;
+        font-size: 50px;
+        font-weight: bold;
+        margin-bottom: 60px;
+        margin-top: 10px;
+    }
+</style>
+<html>
+    <head>
+        <title>GreenThumb.org(login page)</title>
+    </head>
+    <body>
+        <p class="tit">Green Thumb Login</p>
+        <div class="main">
+            <p class="tits">Login</p>
+            <button class="btn" onclick="window.open('greenthumb_main.html')">Login To Marketplace</button>
+            <button class="btn" onclick="window.open('greenthumb_mod_login.html')">Login As Moderator</button>
+            <button class="btn" onclick="window.open('greenthumb_application.html')">Login for Submission</button>
+        </div>
+    </body>
+</html>

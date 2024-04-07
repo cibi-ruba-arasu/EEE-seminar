@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<style>
+    .tit{
+        background-color: darkolivegreen;
+        color: white;
+        text-align: center;
+        margin-top: 0;
+        font-size: 70px;
+        padding: 10px;
+    }
+    body{
+        background-color: rgb(54, 68, 32);
+    }
+    .ic{
+        width: 250px;
+        height: 300px;
+        border-style: solid;
+        border-color: black;
+        margin-left: 50px;
+        background-color: white;
+        display: inline-block;
+    }
+    .img{
+        width: 230px;
+        height: 130px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+    .icmn{
+        display: inline-block;
+        border-color: white;
+    }
+    .stit{
+        text-align: center;
+    }
+    .btn{
+        margin-left: 85px;
+        height: 30px;
+        background-color: black;
+        color: white;
+        border-style: none;
+        transition-duration: 0.6s;
+        border-radius: 10px;
+    }
+    .btn:hover{
+        transform: scale(120%);
+        cursor: pointer;
+    }
+    .clicked{
+        background-color: green;
+    }
+</style>
+<html>
+    <head>
+        <title>GreenThumb.org</title>
+    </head>
+    <body>
+        <p class="tit">GreenThumb.org</p>
+        <div class="icmn"></div>
+    </body>
+</html>
+<script>
+    let mainic = document.querySelector('.icmn');
+
+    if (localStorage.length > 0) {
+        mainic.innerHTML = `     
+            <div class="icmn">   
+                <div class="ic">
+                    <img src="AI tractor.jpg" class="img">
+                    <p class="stit">AI tractor</p>
+                    <button class="btn" onclick="ped(this);">Purchase</button>
+                </div>
+                <div class="ic">
+                    <img src="pesticide AI.png" class="img">
+                    <p class="stit">AI pesticide</p>
+                    <button class="btn" onclick="ped(this);">Purchase</button>
+                </div>
+            </div>`;
+    }
+
+    function ped(btn) {
+        btn.innerHTML = "Purchased";
+        btn.classList.add('clicked');
+    }
+</script>

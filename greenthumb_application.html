@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<style>
+    .tit {
+        background-color: black;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        padding: 10px;
+        margin-top: 0;
+    }
+    .dp {
+        display: inline-block;
+        width: 300px;
+        border-radius: 150px;
+    }
+    .ic {
+        border: solid;
+        border-color: black;
+        display:block;
+    }
+    .inp {
+        display: none;
+    }
+    .updbtn {
+        background-color: black;
+        color: white;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+        width: 90px;
+        margin-bottom: 10px;
+        margin-left: 100px;
+        transition-duration: 0.6s;
+    }
+    .updbtn:hover {
+        color: black;
+        background-color: white;
+        border-style: solid;
+        border-color: black;
+        cursor: pointer;
+    }
+    .prp{
+        margin: 20px;
+        border-style: solid;
+        border-color: gray;
+        border-width: 2px;
+        display: inline-block;
+        margin-right: 0;
+        margin-left: 500px;
+        padding: 20px;
+    }
+    .tits{
+        font-size: 50px;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+        text-decoration: underline;
+    }
+    .appl{
+        border-style: solid;
+        border-color: gray;
+        border-width: 1px;
+        display: inline-block;
+        height: 700px;
+    }
+    .inputs-container {
+        text-align: center;
+    }
+    .nm{
+        display: block;
+        margin-left: 575px;
+        margin-bottom: 60px;
+    }
+    .ptit{
+        display: block;
+        margin-left: 575px;
+        margin-bottom: 60px;
+    }
+    .desc{
+        height: 230px;
+        width: 400px;
+        margin-bottom: 30px;
+    }
+    .desc::placeholder{
+        top: 0;
+    }
+    .subm{
+        color: white;
+        background-color: black;
+        transition-duration: 0.6s;
+        border-style: none;
+        height: 30px;
+        width: 80px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 620px;
+        border-radius: 10px;
+    }
+    .subm:hover{
+        color: black;
+        background-color: white;
+        border-style: solid;
+        border-color: black;
+        cursor: pointer;
+    }
+    .inpproof{
+        display: block;
+        margin-left: 570px;
+        margin-bottom: 30px;
+    }
+</style>
+<html>
+    <head>
+        <title>Greenthumb.org(Submission)</title>
+    </head>
+    <body>
+        <p class="tit">Submission Page</p>
+        <div class="ic">
+            <p class="tits">Application</p>
+            
+            <div class="prp">
+                <img src="def.png" class="dp"> 
+                <label class="updbtn" for="inp-file">Update image</label>
+                <input class="inp" type="file" accept="image/jpeg, image/png, image/jpg" id="inp-file">
+            </div>   
+            <div class="inputs-container">
+                <p style="font-weight: bolder;">Name</p>
+                <input class="nm" type="text" placeholder="name">
+                <p style="font-weight: bolder;">Project-title</p>
+                <input class="ptit" type="text" placeholder="Project-title">
+                <p style="font-weight: bolder;">Project-Descripton</p>
+                <input class="desc" type="text" placeholder="Description">
+                <p style="font-weight: bolder;">upload proof</p>
+                <input class="inpproof" type="file" accept="image/jpeg, image/png, image/jpg" id="inp-file-proof">
+            </div>        
+            <button class="subm" onclick="main();">Submit</button>
+        </div>
+    </body>
+    <script>
+        let pp = document.querySelector('.dp')
+        let proofImg = document.querySelector('.inpproof');
+        let inpdoc = document.getElementById('inp-file')
+    
+        inpdoc.onchange = function() {
+            pp.src = URL.createObjectURL(inpdoc.files[0])
+        };
+
+        function main()
+        {
+            let file = inpdoc.files[0];
+            let proofFile = proofImg.files[0];
+            let nmappl=document.querySelector('.nm');
+            let titappl=document.querySelector('.ptit');
+            let descappl=document.querySelector('.desc');
+            let reader = new FileReader();
+
+            reader.onload = function() {
+                pp.src = reader.result;
+                localStorage.setItem('uploadedImage', reader.result);
+            };
+
+            let proofReader = new FileReader();
+
+            proofReader.onload = function() {
+                localStorage.setItem('proofImage', proofReader.result);
+            };
+
+            reader.readAsDataURL(file);
+            proofReader.readAsDataURL(proofFile);
+            localStorage.setItem('nameinappl',nmappl.value);
+            localStorage.setItem('titinappl',titappl.value);
+            localStorage.setItem('descinappl',descappl.value);
+
+            descappl.value=''
+            nmappl.value=''
+            titappl.value=''
+        }
+    </script>
